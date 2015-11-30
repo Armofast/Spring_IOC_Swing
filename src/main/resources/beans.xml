@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+<bean id="mainFrame" class="visuals.MainFrame" init-method="init">
+<property name="mainPanel">
+<ref bean="mainPanel"/>
+</property>
+<property name="title">
+<value>My First GUI with Spting IOC</value>
+</property>
+</bean>
+<bean id="mainPanel" class="visuals.MainPanel" init-method="init">
+<property name="area">
+<ref bean="myTextArea"/>
+</property>
+</bean>
+
+<bean id="myTextArea" class="visuals.MyTextArea" init-method="init">
+
+</bean>
+</beans>
